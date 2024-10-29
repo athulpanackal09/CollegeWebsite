@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJ Institute of Engineering & Technology</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <h1>AJ Institute of Engineering & Technology</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>A J Institute of Engineering & Technology is promoted by Laxmi Memorial Education Trust which was registered in the year 1991 in the memory of Late Laxmi Shetty, mother of Dr. A. J. Shetty, who is the President and Managing Director of the Trust.
+
+Being a pioneer industrialist of South Canara, Dr. A. J. Shetty started the renowned Star Hotel Moti Mahal, A.J, Hospital & Research Centre (Tertiary Care Super Speciality Hospital), A.J. Institute Of Medical Science, A.J. Institute Of Dental Sciences, A.J. Institute Of Management, A. J. Institute Of Paramedical Sciences, Laxmi Memorial College Of Nursing, Laxmi Memorial Institute Of Nursing, Laxmi Memorial College Of Physiotherapy, Moti Mahal College Of Hotel Management (Attached With 3 Star Training Hotel Moti Mahal), Laxmi Memorial College Of Hotel Management, A. J. Institute Of Hospital Management Laxmi Institute Of Paramedical Science</p>
+        <div id="get-started">
+            <h3>Get Started</h3>
+            <p>Join us today to enhance your skills and knowledge!</p>
+            <a href="/map-register"><button>Sign Up</button></a>
+        </div>
+    </section>
+
+    <section id="courses">
+        <h2>Our Courses</h2>
+        <ul>
+            <li>Course 1: Computer Engineering</li>
+            <li>Course 2: Electrical Engineering</li>
+            <li>Course 3: Mechanical Engineering</li>
+            <li>Course 4: Civil Engineering</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" method="POST" action="/submit">
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <div id="formMessage"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AJ Institute of Engineering & Technology. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                document.getElementById('formMessage').innerText = "Form submitted successfully!";
+            } else {
+                document.getElementById('formMessage').innerText = "Please fill out all fields.";
+            }
+        });
+    </script>
+</body>
+</html>
