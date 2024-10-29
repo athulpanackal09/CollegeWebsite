@@ -20,8 +20,7 @@ public class UserController {
 	UserService userv;
 	
 	@PostMapping("/register")
-	public String addUser(
-			@ModelAttribute Users user) 
+	public String addUser(@ModelAttribute Users user) 
 	{
 
 		boolean userstatus = userv.emailExists(user.getEmail());
@@ -29,7 +28,7 @@ public class UserController {
 		{
 			userv.addUser(user);
 			System.out.println("User is added");
-			return "registersuccess";
+			return "login";
 		}
 
 		else
@@ -43,15 +42,13 @@ public class UserController {
 	}
 
 	@PostMapping("/login")
-	public String validateUser(@RequestParam String email, @RequestParam String password,
-	                           HttpSession session, Model model) {
+	public String validateUser(@RequestParam String email, @RequestParam String password) {
 	    if (!userv.emailExists(email)) {
 	        return "loginfail";
 	    }
 
 	    if (userv.validateUser(email, password)) {
-	        session.setAttribute("email", email);
-	        return "loginsucess";
+	        return "loginsuccess";
 	    
 	    } else {
 	        return "loginfail";
