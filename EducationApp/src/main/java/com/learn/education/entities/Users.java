@@ -6,9 +6,10 @@ import jakarta.persistence.Id;
 @Entity
 public class Users {
 
+	
 	@Id
-	String username;
 	String email;
+	String username;
 	String password;
 	public Users() {
 		super();

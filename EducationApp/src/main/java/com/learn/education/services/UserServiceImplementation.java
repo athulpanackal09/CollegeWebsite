@@ -21,9 +21,9 @@ public class UserServiceImplementation implements UserService {
 	}
 
 	@Override
-	public boolean emailExists(String username) {
+	public boolean emailExists(String email) {
 		// TODO Auto-generated method stub
-		if(repo.findByUsername(username)== null)
+		if(repo.findByEmail(email)== null)
 		{
 			return false;
 		}

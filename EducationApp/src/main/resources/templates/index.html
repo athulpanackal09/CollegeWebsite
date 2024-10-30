@@ -64,6 +64,9 @@ Being a pioneer industrialist of South Canara, Dr. A. J. Shetty started the reno
 
             if (name && email && message) {
                 document.getElementById('formMessage').innerText = "Form submitted successfully!";
+                setTimeout(function() {
+                    location.reload();
+                }, 2000);
             } else {
                 document.getElementById('formMessage').innerText = "Please fill out all fields.";
             }

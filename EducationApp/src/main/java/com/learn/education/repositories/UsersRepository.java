@@ -8,5 +8,5 @@ import com.learn.education.entities.Users;
 public interface UsersRepository extends JpaRepository<Users, String> {
 
 	public Users findByEmail(String email);
-	public Users findByUsername(String name);
+	
 }
